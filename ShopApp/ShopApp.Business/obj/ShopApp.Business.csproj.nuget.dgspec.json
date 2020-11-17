@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Business\\ShopApp.Business.csproj": {}
+    "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Business\\ShopApp.Business.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Business\\ShopApp.Business.csproj": {
+    "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Business\\ShopApp.Business.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
+        "projectUniqueName": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
         "projectName": "ShopApp.Business",
-        "projectPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
+        "projectPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
         "packagesPath": "C:\\Users\\Endaziyar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Business\\obj\\",
+        "outputPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Business\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -30,11 +30,11 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
-                "projectPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj"
+              "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
+                "projectPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj"
               },
-              "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
-                "projectPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj"
+              "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
+                "projectPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj"
               }
             }
           }
@@ -66,14 +66,14 @@
         }
       }
     },
-    "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
+    "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj",
+        "projectUniqueName": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj",
         "projectName": "ShopApp.DataAccess",
-        "projectPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj",
+        "projectPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj",
         "packagesPath": "C:\\Users\\Endaziyar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.DataAccess\\obj\\",
+        "outputPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.DataAccess\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -92,8 +92,8 @@
         "frameworks": {
           "netcoreapp3.1": {
             "projectReferences": {
-              "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
-                "projectPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj"
+              "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
+                "projectPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj"
               }
             }
           }
@@ -155,14 +155,14 @@
         }
       }
     },
-    "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
+    "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj",
         "projectName": "ShopApp.Entities",
-        "projectPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj",
+        "projectPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj",
         "packagesPath": "C:\\Users\\Endaziyar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\obj\\",
+        "outputPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

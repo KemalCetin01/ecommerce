@@ -6719,11 +6719,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
+      "projectUniqueName": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
       "projectName": "ShopApp.Business",
-      "projectPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
+      "projectPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
       "packagesPath": "C:\\Users\\Endaziyar\\.nuget\\packages\\",
-      "outputPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Business\\obj\\",
+      "outputPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Business\\obj\\",
       "projectStyle": "PackageReference",
       "fallbackFolders": [
         "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"
@@ -6742,11 +6742,11 @@
       "frameworks": {
         "netcoreapp3.1": {
           "projectReferences": {
-            "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
-              "projectPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj"
+            "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj": {
+              "projectPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj"
             },
-            "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
-              "projectPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj"
+            "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
+              "projectPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj"
             }
           }
         }

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "xp7ZzKQQoFMA6GdXXCnNnYXQyaaHRV1IW4LEIf4M4GNi/xnEMVqstII0hoQe/fXqZ53h01tSrGQN8jJ91KpZsg==",
+  "dgSpecHash": "pCt74WiLKZY9Z+FZFVU03j2tz47LSy4vo8QIuHe7BAIwmTJzrcXjA2d178gtuAue1yMHDFZDDPIWfbRNEvtmtQ==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
+  "projectFilePath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Business\\ShopApp.Business.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Endaziyar\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Endaziyar\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",
