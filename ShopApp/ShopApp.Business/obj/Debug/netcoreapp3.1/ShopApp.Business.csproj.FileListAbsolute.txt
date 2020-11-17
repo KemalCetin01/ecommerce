@@ -1,0 +1,17 @@
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\bin\Debug\netcoreapp3.1\ShopApp.Business.deps.json
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\bin\Debug\netcoreapp3.1\ShopApp.Business.runtimeconfig.json
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\bin\Debug\netcoreapp3.1\ShopApp.Business.runtimeconfig.dev.json
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\bin\Debug\netcoreapp3.1\ShopApp.Business.dll
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\bin\Debug\netcoreapp3.1\ShopApp.Business.pdb
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\bin\Debug\netcoreapp3.1\ShopApp.DataAccess.dll
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\bin\Debug\netcoreapp3.1\ShopApp.Entities.dll
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\bin\Debug\netcoreapp3.1\ShopApp.DataAccess.pdb
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\bin\Debug\netcoreapp3.1\ShopApp.Entities.pdb
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\obj\Debug\netcoreapp3.1\ShopApp.Business.csprojAssemblyReference.cache
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\obj\Debug\netcoreapp3.1\ShopApp.Business.AssemblyInfoInputs.cache
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\obj\Debug\netcoreapp3.1\ShopApp.Business.AssemblyInfo.cs
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\obj\Debug\netcoreapp3.1\ShopApp.Business.csproj.CoreCompileInputs.cache
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\obj\Debug\netcoreapp3.1\ShopApp.Business.csproj.CopyComplete
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\obj\Debug\netcoreapp3.1\ShopApp.Business.dll
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\obj\Debug\netcoreapp3.1\ShopApp.Business.pdb
+C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.Business\obj\Debug\netcoreapp3.1\ShopApp.Business.genruntimeconfig.cache

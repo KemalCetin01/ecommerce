@@ -1,0 +1,93 @@
+﻿
+@{
+    ViewData["Title"] = "ContactUs";
+}
+
+<h1>ContactUs</h1>
+
+<form id="contact-form" method="post" action="contact.php" role="form">
+
+    <div class="container">
+        <div class="row">
+            <div class="col-md-12">
+                <img src="~/img/contactus.png" alt="adresim" class="img-fluid" />
+            </div>
+            <div class="col-md-12 mt-3 mb-3">
+                <div class="container">
+                    <div class="row">
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_name">Firstname *</label>
+                                <input id="form_name" type="text" name="name" class="form-control" placeholder="Please enter your firstname *" required="required" data-error="Firstname is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_lastname">Lastname *</label>
+                                <input id="form_lastname" type="text" name="surname" class="form-control" placeholder="Please enter your lastname *" required="required" data-error="Lastname is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_email">Email *</label>
+                                <input id="form_email" type="email" name="email" class="form-control" placeholder="Please enter your email *" required="required" data-error="Valid email is required.">
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-6">
+                            <div class="form-group">
+                                <label for="form_need">Please specify your need</label>
+                                <select id="form_need" name="need" class="form-control" required="required" data-error="Please specify your need.">
+                                    <option value=""></option>
+                                    <option value="Request quotation">Request quotation</option>
+                                    <option value="Request order status">Request order status</option>
+                                    <option value="Request copy of an invoice">Request copy of an invoice</option>
+                                    <option value="Other">Other</option>
+                                </select>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <div class="form-group">
+                                <label for="form_message">Message *</label>
+                                <textarea id="form_message" name="message" class="form-control" placeholder="Message for me *" rows="4" required="required" data-error="Please, leave us a message."></textarea>
+                                <div class="help-block with-errors"></div>
+                            </div>
+                        </div>
+                        <div class="col-md-12">
+                            <input type="submit" class="btn btn-success btn-send" value="Send message">
+                        </div>
+                    </div>
+                </div>
+            </div>
+
+            <div class="col-md-8">
+                <iframe src="https://www.google.com/maps/embed?pb=!1m18!1m12!1m3!1d3011.625179064125!2d28.713812015684262!3d40.98968767930275!2m3!1f0!2f0!3f0!3m2!1i1024!2i768!4f13.1!3m3!1m2!1s0x14caa055b17e2f13%3A0x343978e665d0a209!2zRVJHw5xMIE1PQsSwTFlBIMSwU1RBTkJVTA!5e0!3m2!1str!2str!4v1605073300257!5m2!1str!2str" width="600" height="450" frameborder="0" style="border:0;" allowfullscreen="" aria-hidden="false" tabindex="0"></iframe>
+            </div>
+
+            <div class="col-md-4">
+                <div class="row">
+                    <div class="col-lg-12">
+                        Saint Marco Street,
+                        6th floor,Tokyo,
+                        Japan, 123456.
+                    </div>
+                    <div class="col-lg-12">
+                        <p class="m-0 text-danger">
+                            <i class="fa fa-phone-square" aria-hidden="true"></i>
+                            +91 1234567890
+                        </p>
+                        <p class="m-0 text-info">
+                            <i class="fa fa-envelope" aria-hidden="true"></i>
+                            example@gmail.com
+                        </p>
+                    </div>
+                </div>
+            </div>
+
+        </div>
+    </div>
+
+</form>

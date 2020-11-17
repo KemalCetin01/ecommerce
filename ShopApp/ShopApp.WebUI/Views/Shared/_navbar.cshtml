@@ -1,0 +1,51 @@
+﻿<nav class="navbar navbar-expand-lg navbar-dark bg-primary">
+    <div class="container">
+
+    <a asp-controller="Home" asp-action="Index" class="navbar-brand" >Shopping</a>
+    <button class="navbar-toggler" type="button" data-toggle="collapse" data-target="#navbarNavAltMarkup" aria-controls="navbarNavAltMarkup" aria-expanded="false" aria-label="Toggle navigation">
+        <span class="navbar-toggler-icon"></span>
+    </button>
+    <div class="collapse navbar-collapse" id="navbarNavAltMarkup">
+        <div class="navbar-nav mr-auto">
+            <a asp-controller="Home" asp-action="Index" class="nav-item nav-link active" >Home <span class="sr-only"></span></a>
+            <a asp-controller="UI" asp-action="AboutUs" class="nav-link">About Us</a>
+            <a asp-controller="Shop" asp-action="List" class="nav-link">Products</a>
+            
+              @if (User.Identity.IsAuthenticated)
+              {
+                    <a asp-controller="Cart" asp-action="Index"  class="nav-link">Cart</a>
+                    <a asp-controller="Cart" asp-action="GetOrders" class="nav-link">Orders</a>
+
+                  if (User.IsInRole("admin"))
+                  {
+                    <a asp-controller="Admin" asp-action="CreateProduct" class="nav-link">Add Product</a>
+                    <a asp-controller="Admin" asp-action="ProductList" class="nav-link">Admin Products</a>
+                    <a asp-controller="Admin" asp-action="CreateCategory" class="nav-link">Add Category</a>
+                    <a asp-controller="Admin" asp-action="CategoryList" class="nav-link">Admin Categories</a>
+
+                  }
+              }
+                <a asp-controller="UI" asp-action="ContactUs" class="nav-link">Contact Us</a>
+
+        </div>
+        <div class="navbar-nav  ml-auto">
+            @if (User.Identity.IsAuthenticated)
+            {
+                <a asp-controller="Account" asp-action="Manage" class="nav-link">
+                    @User.Identity.Name
+                </a>
+               <a asp-controller="Account" asp-action="Logout" class="nav-link">Logout</a>
+
+            }
+            else
+            {
+                    <a asp-controller="Account" asp-action="Login" class="nav-link">Login</a>
+                    <a asp-controller="Account" asp-action="Register" class="nav-link">Register</a>
+
+            }
+        </div>
+
+    </div>
+    </div>
+</nav>
+       
