@@ -20,5 +20,6 @@ namespace ShopApp.WebUI.Models
         [Range(1,10000)]
         public decimal? Price { get; set; }
         public List<Category> SelectedCategories{ get; set; }
+        public List<Brand> SelectedBrands{ get; set; }
     }
 }

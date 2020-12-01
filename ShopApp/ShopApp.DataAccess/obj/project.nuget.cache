@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "9ayaQ3/FIepvabb+zKpo37Ve6aSyR4sBT0Uk4JzxguuuNc63CJw1d4sCYORsbPdH05rFxX1kF5f2jboxwbu++g==",
+  "dgSpecHash": "oZMKB1ExzBgNWpTWX5fDtw9xMNbF6TJCxlm73rpfVp7U89i5DB6rAJJSwvbJ0wsz9nZ3nVI89Fv+URnwiLFFyw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj",
+  "projectFilePath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.DataAccess\\ShopApp.DataAccess.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Endaziyar\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",
     "C:\\Users\\Endaziyar\\.nuget\\packages\\microsoft.bcl.asyncinterfaces\\1.1.1\\microsoft.bcl.asyncinterfaces.1.1.1.nupkg.sha512",

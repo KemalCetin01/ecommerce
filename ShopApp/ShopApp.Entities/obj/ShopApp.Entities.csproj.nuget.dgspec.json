@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {}
+    "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {}
   },
   "projects": {
-    "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
+    "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj",
+        "projectUniqueName": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj",
         "projectName": "ShopApp.Entities",
-        "projectPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj",
+        "projectPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj",
         "packagesPath": "C:\\Users\\Endaziyar\\.nuget\\packages\\",
-        "outputPath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\obj\\",
+        "outputPath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\obj\\",
         "projectStyle": "PackageReference",
         "fallbackFolders": [
           "C:\\Program Files\\dotnet\\sdk\\NuGetFallbackFolder"

@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "iQtoJbXhdODvhv4jdIxP9N4bgfEAKFR3vmb4Q3E7EIxXA8ZiJM0uE5gsHxlTRQu51x0C0cibifN7i7kyG2onHw==",
+  "dgSpecHash": "Dx4Fq7cj5nWbgP/HijbsLawjO41ip0ym86lY+JD/5hwQ1PSML2CWcTExiANx9n5Fe1orUT8kHAfxCOrDRrBOTA==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj",
+  "projectFilePath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.Entities\\ShopApp.Entities.csproj",
   "expectedPackageFiles": [],
   "logs": []
 }

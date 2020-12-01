@@ -17,7 +17,28 @@ namespace ShopApp.DataAccess.Concrete.EfCore
                     .Where(i => i.Id == id)
                     .Include(i => i.ProductCategories)
                     .ThenInclude(i => i.Category)
+                    .Include(i=>i.ProductBrands)
+                    .ThenInclude(i=>i.Brand)
                     .FirstOrDefault();
+            }
+        }
+
+        public int GetCountByBrand(string brand)
+        {
+            using (var context = new ShopContext())
+            {
+                var products = context.Products.AsQueryable(); //AsQueryable-->list denmediği sürece sorguyu değiştirebiliyorsunuz 
+                                                               //ekstradan where,order by sorgusu gibi ekstra kriter eklenebilir
+
+                if (!string.IsNullOrEmpty(brand))
+                {
+                    products = products
+                          .Include(i => i.ProductBrands)
+                          .ThenInclude(i => i.Brand)
+                          .Where(i => i.ProductBrands.Any(a => a.Brand.Name.ToLower() == brand.ToLower()));
+                }
+                return products.Count();
+
             }
         }
 
@@ -48,7 +69,28 @@ namespace ShopApp.DataAccess.Concrete.EfCore
                     .Where(i=>i.Id==id)
                     .Include(i=>i.ProductCategories)
                     .ThenInclude(i => i.Category)
+                    .Include(i=>i.ProductBrands)
+                    .ThenInclude(i=>i.Brand)
                     .FirstOrDefault();
+            }
+        }
+
+        public List<Product> GetProductsByBrand(string brand, int page, int pageSize)
+        {
+            using (var context = new ShopContext())
+            {
+                var products = context.Products.AsQueryable(); //AsQueryable-->list denmediği sürece sorguyu değiştirebiliyorsunuz 
+                                                               //ekstradan where,order by sorgusu gibi ekstra kriter eklenebilir
+
+                if (!string.IsNullOrEmpty(brand))
+                {
+                    products = products
+                          .Include(i => i.ProductBrands)
+                          .ThenInclude(i => i.Brand)
+                          .Where(i => i.ProductBrands.Any(a => a.Brand.Name.ToLower() == brand.ToLower()));
+                }
+                return products.Skip((page - 1) * pageSize).Take(pageSize).ToList();//Skip Ötele , Take al
+
             }
         }
 

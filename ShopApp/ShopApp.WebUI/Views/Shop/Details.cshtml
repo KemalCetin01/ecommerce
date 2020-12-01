@@ -12,7 +12,10 @@
         <hr />
         @foreach (var category in Model.Categories)
         {
-<a href="#" class="btn btn-link p-0 mb-3">@category.Name</a>}
+        <a href="#" class="btn btn-link p-0 mb-3">@category.Name</a>}
+        @foreach (var brand in Model.Brands)
+        {
+        <a href="#" class="btn btn-link p-0 mb-3">@brand.Name</a>}
         <div class="mb-3">
             <h4 class="text-primary mb-3">
                 @Model.Product.Price TL

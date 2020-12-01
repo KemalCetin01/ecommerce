@@ -24,7 +24,13 @@ namespace ShopApp.WebUI.TagHelpers
 
                 if (string.IsNullOrEmpty(PageModel.CurrentCategory))
                 {
-                    stringBuilder.AppendFormat("<a class='page-link' href='/products?page={0}'>{0}</a>",i);
+                    if (string.IsNullOrEmpty(PageModel.CurrentBrand))
+                    {
+                        stringBuilder.AppendFormat("<a class='page-link' href='/products?page={0}'>{0}</a>", i);
+                    }else
+                    {
+                        stringBuilder.AppendFormat("<a class='page-link' href='/products/{0}?page={1}'>{1}</a>", PageModel.CurrentBrand, i);
+                    }
                 }
                 else
                 {

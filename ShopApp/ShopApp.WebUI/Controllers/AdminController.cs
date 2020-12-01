@@ -15,10 +15,12 @@ namespace ShopApp.WebUI.Controllers
     {
         private IProductService _productService;
         private ICategoryService _categoryService;
-        public AdminController(IProductService productService, ICategoryService categoryService)
+        private IBrandService _brandService;
+        public AdminController(IProductService productService, ICategoryService categoryService, IBrandService brandService)
         {
             _productService = productService;
             _categoryService = categoryService;
+            _brandService = brandService;
         }
         public IActionResult ProductList()
         {
@@ -63,25 +65,27 @@ namespace ShopApp.WebUI.Controllers
                 return NotFound();
             }
             var entity = _productService.GetByIdWithCategories((int)id);
-
+           
             if (entity == null)
             {
                 return NotFound();
             }
-                var model = new ProductModel()
-                {
-                    Id = entity.Id,
-                    Name = entity.Name,
-                    Price = entity.Price,
-                    Description = entity.Description,
-                    ImageUrl = entity.ImageUrl,
-                    SelectedCategories = entity.ProductCategories.Select(i => i.Category).ToList()
-                };
-                ViewBag.Categories = _categoryService.GetAll();
+            var model = new ProductModel()
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Price = entity.Price,
+                Description = entity.Description,
+                ImageUrl = entity.ImageUrl,
+                SelectedCategories = entity.ProductCategories.Select(i => i.Category).ToList(),
+                SelectedBrands = entity.ProductBrands.Select(i => i.Brand).ToList()
+            };
+            ViewBag.Categories = _categoryService.GetAll();
+            ViewBag.Brands = _brandService.GetAll();
 
-                ViewBag.ErrorMessage = _productService.ErrorMessage;
-                return View(model);
-            
+            ViewBag.ErrorMessage = _productService.ErrorMessage;
+            return View(model);
+
         }
         [HttpPost]
         public async Task<IActionResult> EditProduct(ProductModel model,int[] categoryIds,IFormFile file) //TASK--> TPL kütüphanesi
@@ -114,6 +118,7 @@ namespace ShopApp.WebUI.Controllers
                 return RedirectToAction("ProductList");
             }
             ViewBag.Categories = _categoryService.GetAll();
+            ViewBag.Brands = _categoryService.GetAll();
 
             ViewBag.ErrorMessage = _productService.ErrorMessage;
             return View(model);
@@ -203,6 +208,78 @@ namespace ShopApp.WebUI.Controllers
             return Redirect("/admin/EditCategory/"+categoryId);
         }
 
-       
+
+        public IActionResult BrandList()
+        {
+            return View(new BrandListModel()
+            {
+                Brands = _brandService.GetAll()
+            });
+        }
+        [HttpGet]
+        public IActionResult CreateBrand()
+        {
+            return View();
+        }
+        [HttpPost]
+        public IActionResult CreateBrand(BrandModel model)
+        {
+            var entity = new Brand()
+            {
+                Name = model.Name
+            };
+            _brandService.Create(entity);
+
+            return RedirectToAction("BrandList");
+        }
+
+        [HttpGet]
+        public IActionResult EditBrand(int id)
+        {
+            var entity = _brandService.GetByIdWithProduct(id);
+
+            return View(new BrandModel()
+            {
+                Id = entity.Id,
+                Name = entity.Name,
+                Products = entity.ProductBrands.Select(p => p.Product).ToList()
+            });
+        }
+        [HttpPost]
+        public IActionResult EditBrand(BrandModel model)
+        {
+            var entity = _brandService.GetById(model.Id);
+            if (entity == null)
+            {
+                return NotFound();
+            }
+
+            entity.Name = model.Name;
+            _brandService.Update(entity);
+
+            return RedirectToAction("BrandList");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteBrand(int brandId)
+        {
+            var entity = _brandService.GetById(brandId);
+
+            if (entity != null)
+            {
+                _brandService.Delete(entity);
+            }
+
+            return RedirectToAction("BrandList");
+        }
+
+        [HttpPost]
+        public IActionResult DeleteFromBrand(int brandId, int productId)
+        {
+            _brandService.DeleteFromBrand(brandId, productId);
+
+            return Redirect("/admin/EditBrand/" + brandId);
+        }
+
     }
 }

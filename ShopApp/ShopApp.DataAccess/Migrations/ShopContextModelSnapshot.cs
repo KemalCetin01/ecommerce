@@ -19,6 +19,21 @@ namespace ShopApp.DataAccess.Migrations
                 .HasAnnotation("Relational:MaxIdentifierLength", 128)
                 .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
 
+            modelBuilder.Entity("ShopApp.Entities.Brand", b =>
+                {
+                    b.Property<int>("Id")
+                        .ValueGeneratedOnAdd()
+                        .HasColumnType("int")
+                        .HasAnnotation("SqlServer:ValueGenerationStrategy", SqlServerValueGenerationStrategy.IdentityColumn);
+
+                    b.Property<string>("Name")
+                        .HasColumnType("nvarchar(max)");
+
+                    b.HasKey("Id");
+
+                    b.ToTable("Brands");
+                });
+
             modelBuilder.Entity("ShopApp.Entities.Cart", b =>
                 {
                     b.Property<int>("Id")
@@ -183,6 +198,21 @@ namespace ShopApp.DataAccess.Migrations
                     b.ToTable("Products");
                 });
 
+            modelBuilder.Entity("ShopApp.Entities.ProductBrand", b =>
+                {
+                    b.Property<int>("BrandId")
+                        .HasColumnType("int");
+
+                    b.Property<int>("ProductId")
+                        .HasColumnType("int");
+
+                    b.HasKey("BrandId", "ProductId");
+
+                    b.HasIndex("ProductId");
+
+                    b.ToTable("ProductBrand");
+                });
+
             modelBuilder.Entity("ShopApp.Entities.ProductCategory", b =>
                 {
                     b.Property<int>("CategoryId")
@@ -223,6 +253,21 @@ namespace ShopApp.DataAccess.Migrations
 
                     b.HasOne("ShopApp.Entities.Product", "Product")
                         .WithMany()
+                        .HasForeignKey("ProductId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+                });
+
+            modelBuilder.Entity("ShopApp.Entities.ProductBrand", b =>
+                {
+                    b.HasOne("ShopApp.Entities.Brand", "Brand")
+                        .WithMany("ProductBrands")
+                        .HasForeignKey("BrandId")
+                        .OnDelete(DeleteBehavior.Cascade)
+                        .IsRequired();
+
+                    b.HasOne("ShopApp.Entities.Product", "Product")
+                        .WithMany("ProductBrands")
                         .HasForeignKey("ProductId")
                         .OnDelete(DeleteBehavior.Cascade)
                         .IsRequired();

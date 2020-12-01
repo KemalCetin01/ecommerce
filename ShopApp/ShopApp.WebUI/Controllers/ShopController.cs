@@ -31,13 +31,30 @@ namespace ShopApp.WebUI.Controllers
             return View(new ProductDetailsModel()
             {
                 Product = product,
-                Categories = product.ProductCategories.Select(i => i.Category).ToList()
-            });
+                Categories = product.ProductCategories.Select(i => i.Category).ToList(),
+                Brands=product.ProductBrands.Select(i=>i.Brand).ToList()
+            });;
         }
-        public IActionResult List(string category, int page = 1)
+        public IActionResult List(string category,string brand, int page = 1)
         {
             const int pageSize = 3;
             //return View(_productService.GetAll());
+            if (brand!=null)
+            {
+
+                return View(new ProductListModel()
+                {
+                    Products = _productService.GetProductsByBrand(brand, page, pageSize),
+                    PageInfo = new PageInfo()
+                    {
+                        TotalItems = _productService.GetCountByBrand(brand),
+                        CurrentPage = page,
+                        ItemPerPage = pageSize,
+                        CurrentCategory = null,
+                        CurrentBrand = brand
+                    }
+                });
+            }
             return View(new ProductListModel()
             {
                 Products = _productService.GetProductsByCategory(category, page, pageSize),
@@ -46,9 +63,10 @@ namespace ShopApp.WebUI.Controllers
                     TotalItems = _productService.GetCountByCategory(category),
                     CurrentPage = page,
                     ItemPerPage = pageSize,
-                    CurrentCategory = category
+                    CurrentCategory = category,
+                    CurrentBrand = null
                 }
-            });
+            }) ;
 
         }
     }

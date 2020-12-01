@@ -13,6 +13,7 @@ namespace ShopApp.Entities
 
 
         public List<ProductCategory> ProductCategories { get; set; }
+        public List<ProductBrand> ProductBrands { get; set; }
 
     }
 }

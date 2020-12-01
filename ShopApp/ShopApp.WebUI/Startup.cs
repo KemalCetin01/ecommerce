@@ -81,11 +81,13 @@ namespace ShopApp.WebUI
             services.AddScoped<ICategoryDal, EfCoreCategoryDal>();
             services.AddScoped<ICartDal, EfCoreCartDal>();
             services.AddScoped<IOrderDal, EfCoreOrderDal>();
+            services.AddScoped<IBrandDal, EfCoreBrandDal>();
 
             services.AddScoped<IProductService, ProductManager>();
             services.AddScoped<ICategoryService, CategoryManager>();
             services.AddScoped<ICartService, CartManager>();
             services.AddScoped<IOrderService, OrderManager>();
+            services.AddScoped<IBrandService, BrandManager>();
 
             services.AddTransient<IEmailSender, EmailSender>();
             //services.AddMvc().SetCompatibilityVersion(Microsoft.AspNetCore.Mvc.CompatibilityVersion.Version_3_0);
@@ -142,6 +144,11 @@ namespace ShopApp.WebUI
                 routes.MapRoute(
                   name: "products",
                   template: "products/{category?}",
+                  defaults: new { controller = "Shop", action = "List" }
+                );
+                routes.MapRoute(
+                  name: "brand",
+                  template: "products/{brand?}",
                   defaults: new { controller = "Shop", action = "List" }
                 );
 

@@ -62,6 +62,7 @@
 
         </div>
         <div class="col-md-4">
+            <h4>Kategoriler</h4>
             @foreach (var item in (List<Category>)ViewBag.Categories)
             {
                 var isChecked = "";
@@ -86,6 +87,42 @@
                            @isChecked )>
                     <label class="custom-control-label" for="category@(item.Id)">@item.Name</label>
                 </div>
+            }
+            <h4>Markalar</h4>
+            @foreach (var item in (List<Brand>)ViewBag.Brands)
+            {
+                var isSelected = "";
+                if (Model.SelectedBrands.Any(i => i.Id == item.Id))
+                {
+                    isSelected = "selected";
+                    <input type="hidden" name="SelectedBrands[@counter].Id" value="@item.Id" />
+                    <input type="hidden" name="SelectedBrands[@counter].Name" value="@item.Name" />
+
+                    counter++;
+                }
+                else
+                {
+                    isSelected = "";
+                }
+            
+
+
+                    <fieldset>
+                        Ürün Markası 
+                        <select  class="btn btn-secondary dropdown-toggle" id="BrandsId" name="BrandsId"  value="@item.Id">
+
+                            <option value=""></option>
+
+                            <option value="brand@(item.Id)" selected="@isSelected">brand@(item.Name)</option>
+
+
+
+                        </select>
+
+
+                    </fieldset>
+
+             
             }
         </div>
     </div>

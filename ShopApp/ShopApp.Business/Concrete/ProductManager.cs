@@ -60,6 +60,10 @@ namespace ShopApp.Business.Concrete
         {
             return _productDal.GetProductsByCategory(category,page, pageSize);
         }
+        public List<Product> GetProductsByBrand(string brand,int page, int pageSize)
+        {
+            return _productDal.GetProductsByBrand(brand,page, pageSize);
+        }
 
         public void Update(Product entity)
         {
@@ -81,6 +85,12 @@ namespace ShopApp.Business.Concrete
             }
             return isValid;
         }
+
+        public int GetCountByBrand(string brand)
+        {
+            return _productDal.GetCountByBrand(brand);
+        }
+
         public string ErrorMessage { get; set; }
 
     }

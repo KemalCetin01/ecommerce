@@ -1,8 +1,6 @@
 ﻿using Microsoft.EntityFrameworkCore;
 using ShopApp.DataAccess.Abstract;
 using ShopApp.Entities;
-using System;
-using System.Collections.Generic;
 using System.Linq;
 namespace ShopApp.DataAccess.Concrete.EfCore
 {

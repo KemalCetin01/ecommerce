@@ -1,8 +1,8 @@
 {
   "version": 2,
-  "dgSpecHash": "nD/0L53NTBAwtAOPoCq75fGhJkuDkYMx3dRn1v7KsIKduGxN2LB9FyACYXJRY/QXuv/wHZFbFgos1ZyZTPJsrg==",
+  "dgSpecHash": "f69EC+Xbjqac0Qwfg2/0XPIRQC8uqg7aWEvLwqC/X5xPstG6qKDnUdN/3O7FcPllCrZJlTbIZKKmw4TiQGPBfw==",
   "success": true,
-  "projectFilePath": "C:\\Users\\Endaziyar\\Documents\\GitHub\\ecommerce\\ShopApp\\ShopApp.WEBUI\\ShopApp.WebUI.csproj",
+  "projectFilePath": "C:\\Users\\Endaziyar\\source\\repos\\ShopApp\\ShopApp.WEBUI\\ShopApp.WebUI.csproj",
   "expectedPackageFiles": [
     "C:\\Users\\Endaziyar\\.nuget\\packages\\ckeditor\\3.6.4\\ckeditor.3.6.4.nupkg.sha512",
     "C:\\Users\\Endaziyar\\.nuget\\packages\\entityframework\\6.4.4\\entityframework.6.4.4.nupkg.sha512",

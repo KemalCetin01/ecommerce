@@ -16,10 +16,13 @@ namespace ShopApp.DataAccess.Concrete.EfCore
         {
             modelBuilder.Entity<ProductCategory>()
                     .HasKey(c => new { c.CategoryId, c.ProductId });
+            modelBuilder.Entity<ProductBrand>()
+                    .HasKey(c=>new {c.BrandId,c.ProductId });
         }
         public DbSet<Product> Products { get; set; }
         public DbSet<Category> Categories { get; set; }
         public DbSet<Cart> Carts { get; set; }
         public DbSet<Order> Orders { get; set; }
+        public DbSet<Brand> Brands { get; set; }
     }
 }

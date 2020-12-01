@@ -12,6 +12,7 @@ namespace ShopApp.WebUI.Models
         public int ItemPerPage { get; set; }
         public int CurrentPage { get; set; }
         public string CurrentCategory { get; set; }
+        public string CurrentBrand{ get; set; }
         public int TotalPages() 
         {
             return (int)Math.Ceiling((decimal)TotalItems / ItemPerPage); // Ceiling --> yukarı yuvarla
