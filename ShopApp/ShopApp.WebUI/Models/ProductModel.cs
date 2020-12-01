@@ -19,6 +19,15 @@ namespace ShopApp.WebUI.Models
         [Required(ErrorMessage ="Fiyat Belirtiniz.")]
         [Range(1,10000)]
         public decimal? Price { get; set; }
+        [Required(ErrorMessage = "Boyut Belirtiniz.(160*230)")]
+        public String Dimensions { get; set; }
+        [Required]
+        public String Model { get; set; }
+       [Required]
+        public String Material { get; set; }
+        public decimal? SequenceMeter { get; set; }
+        public decimal? WarrantyPeriod { get; set; }
+
         public List<Category> SelectedCategories{ get; set; }
         public List<Brand> SelectedBrands{ get; set; }
     }

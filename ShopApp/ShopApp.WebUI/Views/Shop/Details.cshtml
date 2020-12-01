@@ -10,12 +10,13 @@
             @Model.Product.Name
         </h1>
         <hr />
+
         @foreach (var category in Model.Categories)
         {
         <a href="#" class="btn btn-link p-0 mb-3">@category.Name</a>}
-        @foreach (var brand in Model.Brands)
-        {
-        <a href="#" class="btn btn-link p-0 mb-3">@brand.Name</a>}
+      
+        <a href="#" class="btn btn-link p-0 mb-3">@Model.Brands.Name</a>
+
         <div class="mb-3">
             <h4 class="text-primary mb-3">
                 @Model.Product.Price TL
@@ -37,6 +38,95 @@
     </div>
 </div>
 
+<div class="row">
+    <div class="col-md-12">
+        <ul class="nav nav-tabs" id="myTab" role="tablist">
+            <li class="nav-item">
+                <a class="nav-link active" id="home-tab" data-toggle="tab" href="#home" role="tab" aria-controls="home" aria-selected="true"><b>Ürün Bilgileri</b> </a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="profile-tab" data-toggle="tab" href="#profile" role="tab" aria-controls="profile" aria-selected="false"><b>Ürün Yorumları</b></a>
+            </li>
+            <li class="nav-item">
+                <a class="nav-link" id="contact-tab" data-toggle="tab" href="#contact" role="tab" aria-controls="contact" aria-selected="false"><b>Taksit Seçenekleri</b></a>
+            </li>
+        </ul>
+        <div class="tab-content" id="myTabContent">
+            <div class="tab-pane fade show active" id="home" role="tabpanel" aria-labelledby="home-tab">
+
+                <div class="tab_container">
+                    <div id="tab-content-1" class="tabPanel" style="display: block;">
+                        <div class="panelContent">
+                            <table class="table table-bordered">
+                                <tbody>
+                                    <tr>
+                                        <th>  <label asp-for="@Model.Product.Model"></label></th>
+                                        <td>
+                                            <span id="ContentPlaceHolder1_lblMarkaAd">@Model.Brands.Name</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>  <label asp-for="@Model.Product.Model"></label></th>
+                                        <td>
+                                            <span id="ContentPlaceHolder1_lblUrunGrupAd">@Model.Product.Model</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>  <label asp-for="@Model.Product.Code"></label></th>
+                                        <td>
+                                            <span id="ContentPlaceHolder1_lblUrunKod">@Model.Product.Code</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>  <label asp-for="@Model.Product.Dimensions"></label></th>
+                                        <td>
+                                            <span id="ContentPlaceHolder1_lblUrunBoyut">@Model.Product.Dimensions</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label asp-for="@Model.Product.SequenceMeter"></label></th>
+                                        <td>
+                                            <span id="ContentPlaceHolder1_lblUrunM2">@Model.Product.SequenceMeter</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th><label asp-for="@Model.Product.Material"></label></th>
+                                        <td>@Model.Product.Material</td>
+                                    </tr>
+                                    <tr>
+                                        <th><label asp-for="@Model.Product.WarrantyPeriod"></label></th>
+                                        <td>@Model.Product.WarrantyPeriod YIL</td>
+                                    </tr>
+                                </tbody>
+                            </table>
+                        </div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="profile" role="tabpanel" aria-labelledby="profile-tab">
+                <div class="panelContent">
+                    <div style="margin-bottom: 10px">
+                        <span>Bu ürüne ilk yorum yapan siz olun</span>
+                    </div>
+                    <div class="commentBox">
+                        <div class="col-xs-12 col-sm-8">
+                            <textarea class="form-control grey commenttextbox" id="tbCommentSubject" required="required" placeholder="Yorum Başlığı" rows="1"></textarea>
+                        </div>
+
+                        <div class="col-xs-12 col-sm-8">
+                            <textarea class="form-control grey commenttextbox" id="tbComment" required="required" onkeypress="return TextAreaControl(event,this)" placeholder="birincilerhali.com'dan satın aldığınız ürünle ilgili yorum yapıp görüşlerinizi paylaşabilirsiniz.(Not:Yorum yapabilmek için kullanıcı girişi yapmalısınız)" rows="7"></textarea>
+                        </div>
+                        <div class="col-xs-12 col-sm-4">
+                            <a class="add-cart-button comment" onclick="DoComment()">Yorumla</a>
+                        </div>
+                        <div class="clearfix"></div>
+                    </div>
+                </div>
+            </div>
+            <div class="tab-pane fade" id="contact" role="tabpanel" aria-labelledby="contact-tab">Tab3</div>
+        </div>
+    </div>
+</div>
 <div class="row">
     <div class="col-md-12">
         <p class="p-3">

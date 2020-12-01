@@ -32,7 +32,7 @@ namespace ShopApp.WebUI.Controllers
             {
                 Product = product,
                 Categories = product.ProductCategories.Select(i => i.Category).ToList(),
-                Brands=product.ProductBrands.Select(i=>i.Brand).ToList()
+                Brands=product.ProductBrands.Select(i=>i.Brand).FirstOrDefault()
             });;
         }
         public IActionResult List(string category,string brand, int page = 1)
