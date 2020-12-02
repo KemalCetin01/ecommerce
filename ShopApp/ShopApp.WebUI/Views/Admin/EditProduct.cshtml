@@ -89,41 +89,12 @@
                 </div>
             }
             <h4>Markalar</h4>
-            @foreach (var item in (List<Brand>)ViewBag.Brands)
-            {
-                var isSelected = "";
-                if (Model.SelectedBrands.Any(i => i.Id == item.Id))
-                {
-                    isSelected = "selected";
-                    <input type="hidden" name="SelectedBrands[@counter].Id" value="@item.Id" />
-                    <input type="hidden" name="SelectedBrands[@counter].Name" value="@item.Name" />
 
-                    counter++;
-                }
-                else
-                {
-                    isSelected = "";
-                }
-            
+            @Model.SelectedBrands.Id
+            @Model.SelectedBrands.Name
 
-
-                    <fieldset>
-                        Ürün Markası 
-                        <select  class="btn btn-secondary dropdown-toggle" id="BrandsId" name="BrandsId"  value="@item.Id">
-
-                            <option value=""></option>
-
-                            <option value="brand@(item.Id)" selected="@isSelected">brand@(item.Name)</option>
-
-
-
-                        </select>
-
-
-                    </fieldset>
-
-             
-            }
+            Brands: <select asp-for="@Model.SelectedBrands.Id" asp-items="@Model.Brands"> </select>
+        
         </div>
     </div>
 

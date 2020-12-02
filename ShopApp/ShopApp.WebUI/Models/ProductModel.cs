@@ -1,4 +1,5 @@
-﻿using ShopApp.Entities;
+﻿using Microsoft.AspNetCore.Mvc.Rendering;
+using ShopApp.Entities;
 using System;
 using System.Collections.Generic;
 using System.ComponentModel.DataAnnotations;
@@ -29,6 +30,7 @@ namespace ShopApp.WebUI.Models
         public decimal? WarrantyPeriod { get; set; }
 
         public List<Category> SelectedCategories{ get; set; }
-        public List<Brand> SelectedBrands{ get; set; }
+        public Brand SelectedBrands{ get; set; }
+        public List<SelectListItem> Brands{ get; set; }
     }
 }

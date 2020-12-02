@@ -1,9 +1,11 @@
-﻿using System.IO;
+﻿using System.Collections.Generic;
+using System.IO;
 using System.Linq;
 using System.Threading.Tasks;
 using Microsoft.AspNetCore.Authorization;
 using Microsoft.AspNetCore.Http;
 using Microsoft.AspNetCore.Mvc;
+using Microsoft.AspNetCore.Mvc.Rendering;
 using ShopApp.Business.Abstract;
 using ShopApp.Entities;
 using ShopApp.WebUI.Models;
@@ -65,7 +67,7 @@ namespace ShopApp.WebUI.Controllers
                 return NotFound();
             }
             var entity = _productService.GetByIdWithCategories((int)id);
-           
+
             if (entity == null)
             {
                 return NotFound();
@@ -78,10 +80,28 @@ namespace ShopApp.WebUI.Controllers
                 Description = entity.Description,
                 ImageUrl = entity.ImageUrl,
                 SelectedCategories = entity.ProductCategories.Select(i => i.Category).ToList(),
-                SelectedBrands = entity.ProductBrands.Select(i => i.Brand).ToList()
+                Dimensions = entity.Dimensions,
+                Material = entity.Material,
+                Model = entity.Model,
+                SequenceMeter = entity.SequenceMeter,
+                WarrantyPeriod = entity.WarrantyPeriod,
+                SelectedBrands = entity.ProductBrands.Select(i => i.Brand).FirstOrDefault()
             };
+
+            List<SelectListItem> ListBrands = new List<SelectListItem>();
+
+            List<Brand> GetAllBrands = _brandService.GetAll();
+            GetAllBrands.ForEach(x =>
+            {
+                ListBrands.Add(new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
+            });
+            model.Brands = ListBrands;
+
+
+
             ViewBag.Categories = _categoryService.GetAll();
             ViewBag.Brands = _brandService.GetAll();
+            
 
             ViewBag.ErrorMessage = _productService.ErrorMessage;
             return View(model);
