@@ -14,7 +14,7 @@
 }
 
 
-<h1>Edit Product</h1>
+<h1>Ürün Düzenle</h1>
 <hr />
 
 <form asp-controller="Admin" asp-action="EditProduct" method="post" enctype="multipart/form-data">
@@ -32,6 +32,14 @@
                 </div>
             </div>
             <div class="form-group row">
+                <label asp-for="Code" class="col-md-2 col-form-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Code" value="@Model.Code" class="form-control" disabled="disabled" />
+                    <span asp-validation-for="Code" class="text-danger"></span>
+                </div>
+            </div>
+           
+            <div class="form-group row">
                 <label asp-for="ImageUrl" class="col-md-2 col-form-label"></label>
                 <div class="col-md-10">
                     <input type="hidden" name="ImageUrl" value="@Model.ImageUrl" />
@@ -40,6 +48,36 @@
                     <span asp-validation-for="ImageUrl" class="text-danger"></span>
                 </div>
             </div>
+
+            <div class="form-group row">
+                <label asp-for="Modell" class="col-md-2 col-form-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Modell" value="@Model.Modell" class="form-control" />
+                    <span asp-validation-for="Modell" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Dimensions" class="col-md-2 col-form-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Dimensions" value="@Model.Dimensions" class="form-control" />
+                    <span asp-validation-for="Dimensions" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="Material" class="col-md-2 col-form-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="Material" value="@Model.Material" class="form-control" />
+                    <span asp-validation-for="Material" class="text-danger"></span>
+                </div>
+            </div>
+            <div class="form-group row">
+                <label asp-for="WarrantyPeriod" class="col-md-2 col-form-label"></label>
+                <div class="col-md-10">
+                    <input asp-for="WarrantyPeriod" value="@Model.WarrantyPeriod" class="form-control" />
+                    <span asp-validation-for="WarrantyPeriod" class="text-danger"></span>
+                </div>
+            </div>
+
             <div class="form-group row">
                 <label asp-for="Description" class="col-md-2 col-form-label"></label>
                 <div class="col-md-10">
@@ -63,16 +101,18 @@
         </div>
         <div class="col-md-4">
             <h4>Kategoriler</h4>
-            @foreach (var item in (List<Category>)ViewBag.Categories)
+             @foreach (var item in (List<Category>)ViewBag.Categories)
             {
                 var isChecked = "";
                 if (Model.SelectedCategories.Any(i => i.Id == item.Id))
                 {
                     isChecked = "checked";
+
                     <input type="hidden" name="SelectedCategories[@counter].Id" value="@item.Id" />
                     <input type="hidden" name="SelectedCategories[@counter].Name" value="@item.Name" />
 
                     counter++;
+
                 }
                 else
                 {
@@ -83,17 +123,18 @@
                     <input type="checkbox"
                            name="categoryIds"
                            value="@item.Id"
-                           class="custom-control-input" id="category@(item.Id)"
-                           @isChecked )>
+                           class="custom-control-input"
+                           id="category@(item.Id)"
+                           @isChecked>
                     <label class="custom-control-label" for="category@(item.Id)">@item.Name</label>
                 </div>
             }
             <h4>Markalar</h4>
 
-            @Model.SelectedBrands.Id
+           @Model.SelectedBrands.Id
             @Model.SelectedBrands.Name
 
-            Brands: <select asp-for="@Model.SelectedBrands.Id" asp-items="@Model.Brands"> </select>
+            Brands: <select name="BrandId" asp-for="@Model.SelectedBrands.Id" asp-items="@Model.Brands"> </select>
         
         </div>
     </div>

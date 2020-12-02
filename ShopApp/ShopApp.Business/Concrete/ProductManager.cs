@@ -70,9 +70,9 @@ namespace ShopApp.Business.Concrete
             _productDal.Update(entity);
         }
 
-        public void Update(Product entity, int[] categoryIds)
+        public void Update(Product entity, int[] categoryIds, int brandId)
         {
-            _productDal.Update(entity, categoryIds);
+            _productDal.Update(entity, categoryIds,brandId);
         }
 
         public bool Validate(Product entity)

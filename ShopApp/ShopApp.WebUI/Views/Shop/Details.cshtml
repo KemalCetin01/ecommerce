@@ -14,7 +14,7 @@
         @foreach (var category in Model.Categories)
         {
         <a href="#" class="btn btn-link p-0 mb-3">@category.Name</a>}
-      
+    <hr />
         <a href="#" class="btn btn-link p-0 mb-3">@Model.Brands.Name</a>
 
         <div class="mb-3">
@@ -60,7 +60,13 @@
                             <table class="table table-bordered">
                                 <tbody>
                                     <tr>
-                                        <th>  <label asp-for="@Model.Product.Model"></label></th>
+                                        <th>  <label asp-for="@Model.Product.Name"></label></th>
+                                        <td>
+                                            <span id="ContentPlaceHolder1_lblMarkaAd">@Model.Product.Name</span>
+                                        </td>
+                                    </tr>
+                                    <tr>
+                                        <th>  <label asp-for="@Model.Brands.Name"></label></th>
                                         <td>
                                             <span id="ContentPlaceHolder1_lblMarkaAd">@Model.Brands.Name</span>
                                         </td>

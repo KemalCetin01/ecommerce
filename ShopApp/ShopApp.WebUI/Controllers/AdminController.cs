@@ -82,9 +82,10 @@ namespace ShopApp.WebUI.Controllers
                 SelectedCategories = entity.ProductCategories.Select(i => i.Category).ToList(),
                 Dimensions = entity.Dimensions,
                 Material = entity.Material,
-                Model = entity.Model,
+                Modell = entity.Model,
                 SequenceMeter = entity.SequenceMeter,
                 WarrantyPeriod = entity.WarrantyPeriod,
+                Code=entity.Code,
                 SelectedBrands = entity.ProductBrands.Select(i => i.Brand).FirstOrDefault()
             };
 
@@ -108,7 +109,7 @@ namespace ShopApp.WebUI.Controllers
 
         }
         [HttpPost]
-        public async Task<IActionResult> EditProduct(ProductModel model,int[] categoryIds,IFormFile file) //TASK--> TPL kütüphanesi
+        public async Task<IActionResult> EditProduct(ProductModel model,int[] categoryIds,int brandId, IFormFile file) //TASK--> TPL kütüphanesi
         {
             if (ModelState.IsValid)
             {
@@ -122,7 +123,11 @@ namespace ShopApp.WebUI.Controllers
                 entity.Name = model.Name;
                 entity.Description = model.Description;
                 entity.Price = model.Price;
-
+                entity.Description = model.Description;
+                entity.Dimensions = model.Dimensions;
+                entity.Model = model.Modell;
+                entity.WarrantyPeriod = model.WarrantyPeriod;
+                entity.Material = model.Material;
                 if (file != null)
                 {
                     entity.ImageUrl = file.FileName;
@@ -133,7 +138,7 @@ namespace ShopApp.WebUI.Controllers
                     }
                 }
                  
-                _productService.Update(entity, categoryIds);
+                _productService.Update(entity, categoryIds,brandId);
 
                 return RedirectToAction("ProductList");
             }

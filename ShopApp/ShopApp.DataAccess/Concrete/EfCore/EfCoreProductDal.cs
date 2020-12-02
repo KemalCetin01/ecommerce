@@ -113,12 +113,13 @@ namespace ShopApp.DataAccess.Concrete.EfCore
             }
         }
 
-        public void Update(Product entity, int[] categoryIds)
+        public void Update(Product entity, int[] categoryIds, int brandId)
         {
             using (var context=new ShopContext())
             {
                 var product = context.Products
                                     .Include(i => i.ProductCategories)
+                                    .Include(i=>i.ProductBrands)
                                     .FirstOrDefault(i=>i.Id==entity.Id);
 
                 if (product != null)
@@ -127,6 +128,12 @@ namespace ShopApp.DataAccess.Concrete.EfCore
                     product.Description = entity.Description;
                     product.ImageUrl = entity.ImageUrl;
                     product.Price = entity.Price;
+                    product.Material = entity.Material;
+                    product.Model = entity.Model;
+                    product.SequenceMeter = entity.SequenceMeter;
+                    product.WarrantyPeriod = entity.WarrantyPeriod;
+
+                   
 
                     product.ProductCategories = categoryIds.Select(catid=>new ProductCategory()
                     { 
