@@ -23,6 +23,7 @@ namespace ShopApp.WebUI.Models
         //[Required(ErrorMessage ="Fiyat Belirtiniz.")]
         [Range(1,10000)]
         [Display(Name = "Fiyat")]
+        [DisplayFormat(DataFormatString = "{0:n0}")]
         public decimal? Price { get; set; }
        // [Required(ErrorMessage = "Boyut Belirtiniz.(160*230)")]
         [Display(Name = "Boyut (160*230)")]

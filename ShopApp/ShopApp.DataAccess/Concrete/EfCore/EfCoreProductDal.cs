@@ -9,16 +9,18 @@ namespace ShopApp.DataAccess.Concrete.EfCore
 {
     public class EfCoreProductDal : EfCoreGenericRepository<Product, ShopContext>, IProductDal
     {
+
+
         public Product GetByIdWithCategories(int id)
         {
-            using (var context=new ShopContext())
+            using (var context = new ShopContext())
             {
                 return context.Products
                     .Where(i => i.Id == id)
                     .Include(i => i.ProductCategories)
                     .ThenInclude(i => i.Category)
-                    .Include(i=>i.ProductBrands)
-                    .ThenInclude(i=>i.Brand)
+                    .Include(i => i.ProductBrands)
+                    .ThenInclude(i => i.Brand)
                     .FirstOrDefault();
             }
         }
@@ -63,14 +65,14 @@ namespace ShopApp.DataAccess.Concrete.EfCore
 
         public Product GetProductDetails(int id)
         {
-            using (var context=new ShopContext())
+            using (var context = new ShopContext())
             {
                 return context.Products
-                    .Where(i=>i.Id==id)
-                    .Include(i=>i.ProductCategories)
+                    .Where(i => i.Id == id)
+                    .Include(i => i.ProductCategories)
                     .ThenInclude(i => i.Category)
-                    .Include(i=>i.ProductBrands)
-                    .ThenInclude(i=>i.Brand)
+                    .Include(i => i.ProductBrands)
+                    .ThenInclude(i => i.Brand)
                     .FirstOrDefault();
             }
         }
@@ -94,7 +96,7 @@ namespace ShopApp.DataAccess.Concrete.EfCore
             }
         }
 
-        public List<Product> GetProductsByCategory(string category, int page,int pageSize)
+        public List<Product> GetProductsByCategory(string category, int page, int pageSize)
         {
             using (var context = new ShopContext())
             {
@@ -108,19 +110,36 @@ namespace ShopApp.DataAccess.Concrete.EfCore
                           .ThenInclude(i => i.Category)
                           .Where(i => i.ProductCategories.Any(a => a.Category.Name.ToLower() == category.ToLower()));
                 }
-                return products.Skip((page-1)*pageSize).Take(pageSize).ToList();//Skip Ötele , Take al
+                return products.Skip((page - 1) * pageSize).Take(pageSize).ToList();//Skip Ötele , Take al
 
             }
         }
+        public bool Create(Product entity, int[] categoryIds, int brandId)
+        {
+            using (var context = new ShopContext())
+            {
+                ProductBrand productBrand = new ProductBrand();
+                productBrand.BrandId = brandId;
+                productBrand.ProductId = entity.Id;
+                productBrand.Product = entity;
 
+                context.Set<ProductBrand>().Add(productBrand);
+
+                context.Set<Product>().Add(entity);
+
+
+                context.SaveChanges();
+                return true;
+            }
+        }
         public void Update(Product entity, int[] categoryIds, int brandId)
         {
-            using (var context=new ShopContext())
+            using (var context = new ShopContext())
             {
                 var product = context.Products
                                     .Include(i => i.ProductCategories)
-                                    .Include(i=>i.ProductBrands)
-                                    .FirstOrDefault(i=>i.Id==entity.Id);
+                                    .Include(i => i.ProductBrands)
+                                    .FirstOrDefault(i => i.Id == entity.Id);
 
                 if (product != null)
                 {
@@ -131,16 +150,20 @@ namespace ShopApp.DataAccess.Concrete.EfCore
                     product.Material = entity.Material;
                     product.Model = entity.Model;
                     product.SequenceMeter = entity.SequenceMeter;
+                    product.Dimensions = entity.Dimensions;
                     product.WarrantyPeriod = entity.WarrantyPeriod;
 
-                   
-
-                    product.ProductCategories = categoryIds.Select(catid=>new ProductCategory()
-                    { 
-                    CategoryId=catid,
-                    ProductId=entity.Id
+                    product.ProductCategories = categoryIds.Select(catid => new ProductCategory()
+                    {
+                        CategoryId = catid,
+                        ProductId = entity.Id
                     }).ToList();
 
+                    product.ProductBrands = product.ProductBrands.Where(x => x.ProductId == product.Id).Select(b => new ProductBrand()
+                    {
+                        BrandId = brandId,
+                        ProductId = entity.Id
+                    }).ToList();
                     context.SaveChanges();
                 }
             }

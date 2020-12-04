@@ -35,12 +35,27 @@ namespace ShopApp.WebUI.Controllers
         [HttpGet]
         public IActionResult CreateProduct()
         {
-            return View(new ProductModel());
+            var model = new ProductModel();
+            ViewBag.Categories = _categoryService.GetAll();
+            ViewBag.Brands = _brandService.GetAll();
+
+            List<SelectListItem> ListBrands = new List<SelectListItem>();
+
+            List<Brand> GetAllBrands = _brandService.GetAll();
+            GetAllBrands.ForEach(x =>
+            {
+                ListBrands.Add(new SelectListItem { Text = x.Name, Value = x.Id.ToString() });
+            });
+            model.Brands = ListBrands;
+
+            return View(model);
         }
 
         [HttpPost]
-        public IActionResult CreateProduct(ProductModel model)
+        public IActionResult CreateProduct(ProductModel model, int[] categoryIds, int brandId)
         {
+            ViewBag.Categories = _categoryService.GetAll();
+            ViewBag.Brands = _categoryService.GetAll();
             if (ModelState.IsValid)
             {
                 var entity = new Product()
@@ -48,9 +63,14 @@ namespace ShopApp.WebUI.Controllers
                     Name = model.Name,
                     Price = model.Price,
                     Description = model.Description,
-                    ImageUrl = model.ImageUrl
+                    ImageUrl = model.ImageUrl,
+                    Model = model.Modell,
+                    Dimensions = model.Dimensions,
+                    Material = model.Material,
+                    WarrantyPeriod = model.WarrantyPeriod,
+                    Code = model.Code
                 };
-                if (_productService.Create(entity))
+                if (_productService.Create(entity,categoryIds,brandId))
                 {
                     return RedirectToAction("ProductList");
                 }

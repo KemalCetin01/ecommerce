@@ -3,7 +3,7 @@
     ViewData["Title"] = "GetOrders";
 }
 
-<h1>Orders</h1>
+<h1>Siparişlerim</h1>
 <hr />
 
 @foreach (var order in Model)
@@ -11,9 +11,9 @@
     <table class="table table-bordered table-sm mb-3">
         <thead class="bg-primary text-white">
             <tr>
-                <td colspan="2">Order Id: #@order.OrderId</td>
-                <th>Price</th>
-                <th>Quantity</th>
+                <td colspan="2">Sipariş Id: #@order.OrderId</td>
+                <th>Fiyat</th>
+                <th>Adet</th>
             </tr>
         </thead>
         <tbody>
@@ -34,7 +34,7 @@
         </tbody>
         <tfoot>
             <tr>
-                <td colspan="2">Customer Name:</td>
+                <td colspan="2">Müşteri Adı:</td>
                 <td>@order.FirstName @order.LastName</td>
                 <td rowspan="3">Total @order.TotalPrice()</td>
             </tr>
@@ -43,19 +43,19 @@
                 <td>@order.Address</td>
             </tr>
             <tr>
-                <td colspan="2">Phone:</td>
+                <td colspan="2">Telefon:</td>
                 <td>@order.Phone</td>
             </tr>
             <tr>
-                <td colspan="2">Payment Status:</td>
+                <td colspan="2">Ödeme Tipi:</td>
                 <td>@order.PaymentTypes</td>
             </tr>
             <tr>
-                <td colspan="2">Order Status:</td>
+                <td colspan="2">Sipariş Durumu:</td>
                 <td>@order.OrderState</td>
             </tr>
             <tr>
-                <td colspan="2">Email:</td>
+                <td colspan="2">E-mail:</td>
                 <td>@order.Email</td>
             </tr>
         </tfoot>

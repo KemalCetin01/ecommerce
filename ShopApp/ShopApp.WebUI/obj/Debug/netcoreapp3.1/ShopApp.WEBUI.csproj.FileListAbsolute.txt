@@ -200,4 +200,3 @@ C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.WEBUI\obj\Debug\netcoreapp3.1\Ra
 C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.WEBUI\obj\Debug\netcoreapp3.1\Razor\Views\Admin\CreateBrand.cshtml.g.cs
 C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.WEBUI\obj\Debug\netcoreapp3.1\Razor\Views\Admin\EditBrand.cshtml.g.cs
 C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.WEBUI\obj\Debug\netcoreapp3.1\ShopApp.WebUI.MvcApplicationPartsAssemblyInfo.cs
-C:\Users\Endaziyar\source\repos\ShopApp\ShopApp.WEBUI\obj\Debug\netcoreapp3.1\Razor\Views\Admin\EditProduct - Copy.cshtml.g.cs

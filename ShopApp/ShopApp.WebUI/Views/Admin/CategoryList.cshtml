@@ -5,7 +5,7 @@
 
 
 
-<h1>Admin Categories</h1>
+<h1>Kategori Düzenle</h1>
 <hr />
 @if (Model.Categories.Count > 0)
 {
@@ -13,7 +13,7 @@
         <thead>
             <tr>
                 <td style="width:30px;">Id</td>
-                <td style="width:100px;">Name</td>
+                <td style="width:100px;">Kategori Adı</td>
                 <td style="width:150px;"></td>
             </tr>
         </thead>
@@ -24,11 +24,11 @@
                     <td>@item.Id</td>
                     <td>@item.Name</td>
                     <td>
-                        <a class="btn btn-primary btn-sm mr-2" href="/admin/editcategory/@item.Id">Edit</a>
+                        <a class="btn btn-primary btn-sm mr-2" href="/admin/editcategory/@item.Id">Düzenle</a>
 
                         <form action="/admin/deletecategory" method="post" style="display:inline;">
                             <input type="hidden" name="categoryId" value="@item.Id" />
-                            <button type="submit" class="btn btn-danger btn-sm">Delete</button>
+                            <button type="submit" class="btn btn-danger btn-sm">Sil</button>
                         </form>
 
 
@@ -42,6 +42,6 @@
 else
 {
     <div class="alert alert-warning">
-        <h4>No Products</h4>
+        <h4>Kategori Yok</h4>
     </div>
 }

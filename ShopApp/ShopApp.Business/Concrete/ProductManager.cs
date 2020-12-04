@@ -25,7 +25,15 @@ namespace ShopApp.Business.Concrete
             }
             return false;
         }
-
+        public bool Create(Product entity, int[] categoryIds, int brandId)
+        {
+            if (Validate(entity))
+            {
+                _productDal.Create(entity, categoryIds, brandId);
+                return true;
+            }
+            return false;
+        }
         public void Delete(Product entity)
         {
             _productDal.Delete(entity);
@@ -90,6 +98,8 @@ namespace ShopApp.Business.Concrete
         {
             return _productDal.GetCountByBrand(brand);
         }
+
+      
 
         public string ErrorMessage { get; set; }
 
